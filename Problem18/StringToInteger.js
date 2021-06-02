@@ -14,3 +14,5 @@ var myAtoi = function(s) {
   return res > max ? max : res;
 };
 console.log(myAtoi("-+12"));
+
+console.log(Number('-90E3'));
