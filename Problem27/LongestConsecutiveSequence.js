@@ -13,7 +13,7 @@ function longConcSeq(nums){
     }
     
     nums.sort((a,b)=>a-b);
-    let longest=0,curLongest=1;
+    let longest=1,curLongest=1;
     for(let i=1;i<nums.length;++i){
         
         if(nums[i]==nums[i-1]){
@@ -23,9 +23,9 @@ function longConcSeq(nums){
             ++curLongest;
         }
         else{
-            longest=Math.max(longest,curLongest);
             curLongest=1;
         }
+        longest=Math.max(longest,curLongest);
     }
     return Math.max(longest,curLongest);
 
