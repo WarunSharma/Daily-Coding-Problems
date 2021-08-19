@@ -4,7 +4,7 @@ https://www.geeksforgeeks.org/coin-change-dp-7/
 */
 
 let min=Number.MAX_SAFE_INTEGER;
-function coinChange(N,coins,coinSum,coinStore='',coinCount=0){
+function coinChange(N,coins,coinSum,coinStore=[],coinCount=0){
 
     if(coinSum>N){
         return;
@@ -17,7 +17,9 @@ function coinChange(N,coins,coinSum,coinStore='',coinCount=0){
     }
 
     for(let coin of coins){
-        coinChange(N,coins,coinSum+coin,coinStore+coin,coinCount+1);
+        coinStore.push(coin);
+        coinChange(N,coins,coinSum+coin,coinStore,coinCount+1);
+        coinStore.pop();
     }
 }
 
